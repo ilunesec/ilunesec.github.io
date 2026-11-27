@@ -180,8 +180,17 @@ a:hover {
 }
 
 .top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 600;
   text-decoration: none;
+}
+
+.top-link svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
 }
 
 .top-link:hover {
@@ -189,52 +198,27 @@ a:hover {
 }
 
 /*
- * The large mark sits up and to the left of the copy: its three rays aim at one focus, and the
- * headline starts there, so the light falls on what the page says.
+ * Two-column hero: copy on the left, a static sample scan card on the right so the product's
+ * purpose is clear at a glance without JavaScript or external screenshots.
  */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
-  column-gap: clamp(16px, 3vw, 40px);
-  padding-block: clamp(32px, 5vw, 64px) clamp(56px, 7vw, 96px);
-}
-
-.hero-mark {
-  position: relative;
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: end;
-  width: clamp(132px, 24vw, 320px);
-}
-
-.hero-mark svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.hero-mark::after {
-  content: "";
-  position: absolute;
-  right: -40%;
-  bottom: -40%;
-  width: 90%;
-  aspect-ratio: 1;
-  background: radial-gradient(closest-side, rgb(255 190 36 / 0.14), rgb(255 190 36 / 0));
-  pointer-events: none;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  padding-block: clamp(36px, 5vw, 72px) clamp(44px, 6vw, 80px);
 }
 
 .hero-copy {
   position: relative;
-  grid-column: 2;
-  grid-row: 2;
-  margin-top: clamp(-24px, -2vw, -8px);
+  grid-column: 1;
+  grid-row: 1;
 }
 
 h1 {
   margin: 0;
   max-width: 17ch;
-  font-size: clamp(2rem, 1.1rem + 3.4vw, 3.75rem);
+  font-size: clamp(2rem, 1.1rem + 3vw, 3.375rem);
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -265,7 +249,7 @@ h1 {
 .soon {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   color: var(--gold);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -273,13 +257,10 @@ h1 {
   text-transform: uppercase;
 }
 
-/* A hollow dot is how the app shows something still in progress. */
-.soon::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border: 2px solid currentcolor;
-  border-radius: 50%;
+.soon svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
 }
 
 .follow {
@@ -306,39 +287,159 @@ h1 {
   flex: none;
 }
 
-/* The three points read as a labelled sheet, the way the app lays out a record's facts. */
+.preview {
+  grid-column: 2;
+  grid-row: 1;
+  background: rgb(255 255 255 / 0.03);
+  border: 1px solid var(--band-rule);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgb(0 0 0 / 0.28);
+}
+
+.preview-head,
+.preview-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 16px;
+  font-size: 0.75rem;
+  color: var(--band-ink-2);
+}
+
+.preview-head {
+  border-bottom: 1px solid var(--band-rule);
+  background: rgb(255 255 255 / 0.02);
+}
+
+.preview-title {
+  font-weight: 600;
+  color: var(--band-ink);
+}
+
+.preview-mode {
+  padding: 2px 8px;
+  border: 1px solid var(--band-rule);
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.preview-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.preview-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 12px;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--band-rule);
+}
+
+.preview-id {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  min-width: 0;
+}
+
+.preview-name {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--band-ink);
+}
+
+.preview-type {
+  font-size: 0.75rem;
+  color: var(--band-ink-2);
+}
+
+.preview-meta {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 0.8125rem;
+  color: var(--band-ink-2);
+}
+
+.preview-meta strong {
+  color: var(--band-ink);
+  font-weight: 600;
+}
+
+.badge {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-high {
+  color: #ff9494;
+  background: rgb(255 107 107 / 0.14);
+  border: 1px solid rgb(255 107 107 / 0.32);
+}
+
+.badge-warn {
+  color: var(--gold);
+  background: rgb(255 190 36 / 0.12);
+  border: 1px solid rgb(255 190 36 / 0.32);
+}
+
+.badge-ok {
+  color: #6ee7b7;
+  background: rgb(52 211 153 / 0.12);
+  border: 1px solid rgb(52 211 153 / 0.3);
+}
+
+.preview-foot {
+  background: rgb(255 255 255 / 0.015);
+}
+
+/* The three points form a horizontal strip on desktop so all three scan in one sweep. */
 .facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px);
   margin-block: 0;
-  padding-block: clamp(40px, 6vw, 72px);
+  padding-block: clamp(36px, 5vw, 64px);
 }
 
 .fact {
-  display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
-  column-gap: clamp(16px, 3vw, 40px);
-  padding-block: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 18px;
   border-top: 1px solid var(--rule);
 }
 
-.fact:last-child {
-  border-bottom: 1px solid var(--rule);
-}
-
 .fact dt {
-  justify-self: end;
-  width: clamp(132px, 24vw, 320px);
   color: var(--structure);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.12em;
-  line-height: 1.9;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .fact dd {
   margin: 0;
-  max-width: 60ch;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.55;
   text-wrap: pretty;
 }
@@ -375,64 +476,37 @@ h1 {
   margin: 20px 0 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 880px) {
   .hero,
-  .fact {
+  .facts {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .hero-mark {
-    justify-self: start;
-    width: clamp(104px, 30vw, 160px);
-  }
-
-  .hero-copy {
+  .hero-copy,
+  .preview {
     grid-column: 1;
-    margin-top: 28px;
   }
 
-  .fact {
-    row-gap: 6px;
+  .preview {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 520px) {
+  .preview-row {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .fact dt {
+  .badge {
+    grid-column: 1;
+    grid-row: 3;
     justify-self: start;
-    width: auto;
-  }
-}
-
-/* One moment of motion: the rays reach toward the headline. They start already partly drawn. */
-@media (prefers-reduced-motion: no-preference) {
-  .hero-mark path {
-    stroke-dasharray: 1;
-    animation: reach 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  .hero-mark path:nth-child(2) {
-    animation-delay: 90ms;
-  }
-
-  .hero-mark path:nth-child(3) {
-    animation-delay: 180ms;
-  }
-}
-
-@keyframes reach {
-  from {
-    stroke-dashoffset: 0.55;
-  }
-
-  to {
-    stroke-dashoffset: 0;
   }
 }
 
 @media (forced-colors: active) {
-  .hero-mark::after {
-    display: none;
-  }
-
-  .soon::before {
+  .badge,
+  .preview-mode {
     border-color: CanvasText;
   }
 }

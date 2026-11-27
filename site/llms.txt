@@ -1,0 +1,18 @@
+# Ilune
+
+> Open-source, self-hosted security posture management for non-human identities and AI agents.
+
+Ilune discovers service principals, API keys, tokens, and AI agents across cloud and identity providers, mapping who owns them, what they can access, and where stale or over-privileged identities create risk. Launching with support for Microsoft Entra ID and Azure. Coming soon.
+
+## Key facts
+
+- **Open source:** Free to use and self-hosted. Scans run inside your own infrastructure, so access credentials and identity data never leave your network.
+- **Inventory:** Tracks non-human identities alongside their owners, credentials, and permissions, starting with Microsoft Entra ID and Azure.
+- **Read-only:** Never creates, modifies, rotates, or deletes anything in your environment, and never stores secret values.
+
+## Links
+
+- [Website](https://ilune.dev/)
+- [GitHub](https://github.com/ilunesec)
+- [Security contact](mailto:security@ilune.dev)
+- [security.txt](https://ilune.dev/.well-known/security.txt)
