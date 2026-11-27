@@ -9,6 +9,10 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 max_line_length = 100
 
+# Meta tags carry long attribute values that cannot wrap.
+[*.html]
+max_line_length = off
+
 [*.md]
 trim_trailing_whitespace = false
 

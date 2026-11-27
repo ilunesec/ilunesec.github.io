@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ilune social card source</title>
+    <style>
+      @font-face {
+        font-family: "IBM Plex Sans";
+        font-weight: 600;
+        src: url("../site/fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "IBM Plex Sans";
+        font-weight: 700;
+        src: url("../site/fonts/ibm-plex-sans-latin-700-normal.woff2") format("woff2");
+      }
+
+      html,
+      body {
+        margin: 0;
+      }
+
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #0b1220;
+        color: #ffffff;
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+
+      .mark {
+        position: absolute;
+        left: 96px;
+        top: 88px;
+        width: 250px;
+      }
+
+      .glow {
+        position: absolute;
+        left: 190px;
+        top: 190px;
+        width: 360px;
+        height: 360px;
+        background: radial-gradient(closest-side, rgb(255 190 36 / 0.16), rgb(255 190 36 / 0));
+      }
+
+      .word {
+        position: absolute;
+        left: 400px;
+        top: 300px;
+        font-size: 44px;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 1;
+        color: #ffbe24;
+      }
+
+      .line {
+        position: absolute;
+        left: 400px;
+        top: 368px;
+        width: 720px;
+        margin: 0;
+        text-wrap: balance;
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="glow"></div>
+      <svg class="mark" viewBox="0 0 119 119">
+        <g fill="none" stroke="#ffbe24" stroke-width="19" stroke-linecap="round">
+          <path d="M109.5 9.5V71.5"/>
+          <path d="M38.79 38.79L82.63 82.63"/>
+          <path d="M9.5 109.5H71.5"/>
+        </g>
+      </svg>
+      <div class="word">ilune</div>
+      <p class="line">Security posture management for non-human identities and AI agents</p>
+    </div>
+  </body>
+</html>

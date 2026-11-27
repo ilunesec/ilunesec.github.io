@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Ilune: security posture management for non-human identities</title>
+    <meta name="description" content="Ilune is a security posture management platform for non-human identities and AI agents, built on an inventory. Open source, self-hosted and read-only. Coming soon.">
+    <link rel="canonical" href="https://ilune.dev/">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#070c16" media="(prefers-color-scheme: dark)">
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ilune">
+    <meta property="og:url" content="https://ilune.dev/">
+    <meta property="og:title" content="Ilune: security posture management for non-human identities">
+    <meta property="og:description" content="An inventory of the service principals, tokens, keys and secrets across your identity sources. Open source, self-hosted and read-only. Coming soon.">
+    <meta property="og:image" content="https://ilune.dev/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="The Ilune mark, three gold rays on navy, beside the words: security posture management for non-human identities and AI agents.">
+    <meta name="twitter:card" content="summary_large_image">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="band">
+      <div class="wrap">
+        <div class="top">
+          <span class="wordmark">
+            <svg viewBox="0 0 119 119" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="#ffbe24" stroke-width="19" stroke-linecap="round">
+                <path d="M109.5 9.5V71.5"/>
+                <path d="M38.79 38.79L82.63 82.63"/>
+                <path d="M9.5 109.5H71.5"/>
+              </g>
+            </svg>
+            ilune
+          </span>
+          <a class="top-link" href="https://github.com/ilunesec">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="band">
+        <div class="wrap hero">
+          <div class="hero-mark" aria-hidden="true">
+            <svg viewBox="0 0 119 119" focusable="false">
+              <g fill="none" stroke="#ffbe24" stroke-width="19" stroke-linecap="round">
+                <path d="M109.5 9.5V71.5" pathLength="1"/>
+                <path d="M38.79 38.79L82.63 82.63" pathLength="1"/>
+                <path d="M9.5 109.5H71.5" pathLength="1"/>
+              </g>
+            </svg>
+          </div>
+          <div class="hero-copy">
+            <h1>
+              Security posture management for <span class="nowrap">non-human</span> identities
+              and AI&nbsp;agents
+            </h1>
+            <p class="lede">
+              Ilune keeps an inventory of the service principals, tokens, keys and secrets across
+              your identity sources, then checks it for credentials that are expired, have no
+              owner or are no longer used.
+            </p>
+            <div class="status">
+              <span class="soon">Coming soon</span>
+              <a class="follow" href="https://github.com/ilunesec">
+                Follow Ilune on GitHub
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <dl class="wrap facts">
+        <div class="fact">
+          <dt>Inventory</dt>
+          <dd>
+            One record for every non-human identity, with its owners, credentials and permissions.
+            Ilune starts with Microsoft Entra ID and Azure.
+          </dd>
+        </div>
+        <div class="fact">
+          <dt>Read-only</dt>
+          <dd>
+            Ilune only reads. It never creates, changes, rotates or deletes anything in the systems
+            it scans, and it never stores secret values.
+          </dd>
+        </div>
+        <div class="fact">
+          <dt>Open source</dt>
+          <dd>
+            Free to use and self-hosted. Scans run in your own environment, so your cloud
+            credentials stay with you.
+          </dd>
+        </div>
+      </dl>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot-inner">
+        <p>Report a security issue: <a href="mailto:security@ilune.dev">security@ilune.dev</a></p>
+        <p>
+          This site is under the MIT licence. IBM Plex Sans is under the SIL Open Font License 1.1.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
