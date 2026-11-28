@@ -96,14 +96,6 @@ dig www.ilune.dev CNAME +short
 dig ilune.dev CAA +short
 ```
 
-### Redirecting `ilune.io` to `ilune.dev`
-
-GitHub Pages supports one custom domain per site. To forward `ilune.io` and `www.ilune.io` to `https://ilune.dev`:
-
-1. Configure an HTTPS-capable `301` redirect (for example, a Cloudflare Redirect Rule) for `ilune.io` and `www.ilune.io` to `https://ilune.dev`, preserving the request path. Do not use HTTP-only registrar forwarding or a `CNAME`, because `https://ilune.io` requests fail TLS validation without a matching certificate.
-2. Add a `CAA` record on `ilune.io` for the certificate authority used by your redirect provider.
-3. Keep `ilune.io` verified under **Organization Settings** > **Pages** on GitHub so no other account can claim it.
-
 ## Ongoing maintenance
 
 - **Security contact:** Confirm that `security@ilune.dev` (referenced in `site/index.html` and `site/.well-known/security.txt`) receives mail.
